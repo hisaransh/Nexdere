@@ -1,0 +1,1 @@
+CREATE TABLE `nexdre`.`user` ( `uid` INT(11) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `phoneno` INT(11) NOT NULL , `password` VARCHAR(255) NOT NULL , `gender` VARCHAR(10) NOT NULL , `dob` DATE NOT NULL , PRIMARY KEY (`uid`));
