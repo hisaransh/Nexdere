@@ -2,6 +2,11 @@
 
 CREATE TABLE `nexdre`.`user` ( `uid` INT(11) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `phoneno` INT(11) NOT NULL , `password` VARCHAR(255) NOT NULL , `gender` VARCHAR(10) NOT NULL , `dob` DATE NOT NULL , PRIMARY KEY (`uid`));
 
+ALTER TABLE `user` ADD UNIQUE(`name`);
+ALTER TABLE `user` ADD UNIQUE(`email`);
+ALTER TABLE `user` ADD UNIQUE(`phoneno`);
+
+
 --------------PlayGround TABLE ---------
 
 CREATE TABLE `nexdre`.`playground` ( `pid` INT(11) NOT NULL AUTO_INCREMENT, `name` VARCHAR(255) NOT NULL , `city` VARCHAR(255) NOT NULL , `start` TIME NOT NULL , `end` TIME NOT NULL , `gametype` VARCHAR(255) NOT NULL , PRIMARY KEY (`pid`));
