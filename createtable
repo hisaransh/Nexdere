@@ -1,1 +1,22 @@
+--------------USER TABLE -----------
+
 CREATE TABLE `nexdre`.`user` ( `uid` INT(11) NOT NULL AUTO_INCREMENT , `name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `phoneno` INT(11) NOT NULL , `password` VARCHAR(255) NOT NULL , `gender` VARCHAR(10) NOT NULL , `dob` DATE NOT NULL , PRIMARY KEY (`uid`));
+
+--------------PlayGround TABLE ---------
+
+CREATE TABLE `nexdre`.`playground` ( `pid` INT(11) NOT NULL AUTO_INCREMENT, `name` VARCHAR(255) NOT NULL , `city` VARCHAR(255) NOT NULL , `start` TIME NOT NULL , `end` TIME NOT NULL , `gametype` VARCHAR(255) NOT NULL , PRIMARY KEY (`pid`));
+
+--------------Allocation Table----------
+
+CREATE TABLE `nexdre`.`allocation` ( `aid` INT(11) NOT NULL AUTO_INCREMENT , `uid` INT(11) NOT NULL , `pid` INT(11) NOT NULL , `time` TIME NOT NULL , `gametype` VARCHAR(255) NOT NULL , `city` VARCHAR(255) NOT NULL , `date` DATE NOT NULL , PRIMARY KEY (`aid`));
+
+----------------------------------------------------------------------------------------
+
+ADD FIRST FOREIGN KEY TO allocation (uid) = user(uid)
+
+> use nexdre;
+> ALTER TABLE allocation ADD CONSTRAINT FK_uid FOREIGN KEY (uid) REFERENCES user(uid);
+
+ADD SECOND FOREIGN KEY TO allocation (pid) = playground(pid)
+
+> ALTER TABLE allocation ADD CONSTRAINT FK_pid FOREIGN KEY (pid) REFERENCES playground(pid);
