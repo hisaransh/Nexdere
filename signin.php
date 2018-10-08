@@ -23,6 +23,9 @@
 				<label for="password">Password :</label><br>
 				<input type="password" name="password" class=" _40 input" required>
 			</p>
+			<p align="center">
+				<input type="submit" name="submit" value="SignIn" class=" _40 input" required>
+			</p>
 		</fieldset>
 	</form>
 </body>
