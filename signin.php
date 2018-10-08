@@ -30,3 +30,38 @@
 	</form>
 </body>
 </html>
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+$servername = "localhost";
+$password = "start";
+$username = "root";
+$database = "nexdre";
+// Create connection
+$conn = new mysqli($servername, $username, $password,$database);
+//checking connection
+if ($conn->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+   }
+   echo "Connected successfully";
+	   $info = $_POST["email/phone"];
+	   $password = md5($_POST["password"]);
+	   echo $info;
+	   $sql = "
+	 		SELECT * FROM user WHERE (phoneno = $info)and password = '$password';  
+	   ";
+	   $result = $conn->query($sql);
+	   if ($result->num_rows > 0) {
+		// output data of each row
+		echo "if entered";
+		while($row = $result->fetch_assoc()) {
+			echo"while working";
+			echo "uid: " . $row["uid"]. " - Name: " . $row["name"]. "gender" . $row["gender"]."dob". $row["dob"]. "<br>";
+		}
+	} else {
+		echo "0 results";
+	}
+	$conn->close();
+   
+  
+}
+?>
