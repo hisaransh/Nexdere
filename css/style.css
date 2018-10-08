@@ -220,6 +220,8 @@ ul.submenu li{
 }
 .white{
 	color: white;
+	font-family: sans-serif;
+	font-size: 20px;
 }
 .left{
 	float:left;
@@ -244,5 +246,40 @@ ul.submenu li{
 	border-bottom-color: blue;
 	border-left-color: grey;
 	border-right-color: grey;
+	border-style: dotted solid double;
 
+}
+.hide{
+	display: none;
+}
+
+.body{
+	min-height: 650px; 
+}
+
+.form{
+	opacity: 1;
+	margin-top: 35px;
+}
+.bg-image {
+  /* The image used */
+  background-image: url("../img/back.jpg");
+  /* Add the blur effect */
+  /*filter: blur(8px);
+  -webkit-filter: blur(8px);*/
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.submit{
+	background-color:#0fff00;
+	color:white; 
+	font-family: sans-serif;
+	font-size: 15px;
 }
