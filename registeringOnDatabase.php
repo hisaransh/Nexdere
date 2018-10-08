@@ -2,7 +2,7 @@
 <?php
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$servername = "localhost";
-		$username = "root";
+		$username = "";
 		$password = "";
         $dbname = "nexdre";
 

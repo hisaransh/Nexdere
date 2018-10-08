@@ -9,7 +9,7 @@
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	 -->
 </head>
-<body>
+<body class="body bg-image">
 	<form  method="POST" action = "registeringOnDatabase.php"  class=" _80 mar0">
 		<fieldset class="_80 mar0 fieldset">
 			<legend align ="center" class="white ">

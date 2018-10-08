@@ -33,8 +33,8 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 $servername = "localhost";
-$password = "start";
-$username = "root";
+$password = "";
+$username = "";
 $database = "nexdre";
 // Create connection
 $conn = new mysqli($servername, $username, $password,$database);
