@@ -28,22 +28,23 @@
 	</p>
 
     <div id="offlineinfo" style="display:none;">
-        <h3>GameType :
-            <select>
-                <option>Cricket</option>
-                <option>Football</option>
-                <option>Golf</option>
-            </select>
-        </h3>
+        
         <h3>City :
-            <select>
+            <select name="city">
                 <option>Delhi</option>
                 <option>Noida</option>
                 <option>Gurgaon</option>
             </select>
         </h3>
+        <h3>GameType :
+            <select name="gametype">
+                <option>Cricket</option>
+                <option>Football</option>
+                <option>Golf</option>
+            </select>
+        </h3>
         <h3>
-        Select Date : <input type="date" />
+        Select Date : <input type="date" name="dataselected" />
         </h3>
     </div>
     <input type="submit" name="gamewaysubmit" value="gamewaySubmit">
@@ -52,6 +53,7 @@
 </html>
 <?php else :
     session_destroy();
+    unset($_SESSION["userid"]);
     header("location: signin.php");
 ?>
 <?php endif; ?>
@@ -60,9 +62,12 @@ if(isset($_POST["gamewaysubmit"]))
 {
         $gameselected = $_POST['game'];
         if($gameselected == "offline"){
+            $_SESSION["gametype"] = $_POST["gametype"];
+            $_SESSION["city"] = $_POST["city"];
+            $_SESSION["date"] = $_POST["dataselected"];
             header("location: offlineInfo.php");
         }else{
-            header("location: onlineInfo.php");
+            //header("location: onlineInfo.php");
         }
 
 
