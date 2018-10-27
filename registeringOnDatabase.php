@@ -1,8 +1,8 @@
 <?php
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$servername = "localhost";
-		$username = "";
-		$password = "";
+		$username = "phpmyadmin";
+		$password = "elonmusk";
         $dbname = "nexdre";
 
 		$conn = new mysqli($servername,$username,$password,$dbname);
@@ -29,12 +29,12 @@
             $result = $conn->query($query);
             if($result)
             {
-                header("location: index.php");
+                header("location: signin.php");
             }else{
                 header("location: signup.php");
             }
         }
 	$conn->close();
     }
-	?>	
+?>	
  
