@@ -47,6 +47,7 @@
                     echo "<tr>";
                     echo "<td>"."Name"."</td>";
                     echo "<td>"."Choose"."</td>";
+                    echo "<td>"."Street"."</td>";
                     echo "</tr>";
 
                     // If number of rows retrived are grater then zero
@@ -56,6 +57,7 @@
                             echo "<tr>";
                             echo "<td>".$row['name']."</td>";
                             echo "<td>"."<input type='radio' name='play' value='$row[pid]' >"."</td>";
+                            echo "<td>".$row['Street']."</td>";
                             echo "</tr>";
                         }
                     }
