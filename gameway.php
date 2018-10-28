@@ -2,7 +2,7 @@
     // Staring the session
     session_start();
 ?>
-
+<!-- if session variable is set  -->
 <?php if(isset($_SESSION["userid"])) :?>
     <!DOCTYPE html>
     <html>
@@ -70,15 +70,18 @@
             // Retriving values
             $gameselected = $_POST['game'];
             if($gameselected == "offline"){
+                // Saving all the value to session variable for future references
                 $_SESSION["gametype"] = $_POST["gametype"];
                 $_SESSION["city"] = $_POST["city"];
                 $_SESSION["date"] = $_POST["dataselected"];
+
+                //navigating to offlineInfo.php
                 header("location: offlineInfo.php");
             }else{
-                // Use this
+                // Use this online way
                 //header("location: onlineInfo.php");
             }
 
-
+            
     }
 ?>

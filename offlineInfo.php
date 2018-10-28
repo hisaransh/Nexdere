@@ -39,7 +39,7 @@
                     ";
 
                     // Creating a form
-                    echo "<form name='offlineinfo' method='post' action='flag.php' ";
+                    echo "<form name='offlineinfo' method='post' action='booking.php' ";
                     $result = $conn->query($query);
                     echo "<div>";
                     // Creating table and showing the result in table

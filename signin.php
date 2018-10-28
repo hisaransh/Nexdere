@@ -45,7 +45,7 @@
 		
 		$servername = "localhost";
 		$username = "phpmyadmin";
-		$password = "";
+		$password = "elonmusk";
 		$database = "nexdre";
 		
 		// Creating connection
