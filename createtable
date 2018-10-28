@@ -25,3 +25,5 @@ ADD FIRST FOREIGN KEY TO allocation (uid) = user(uid)
 ADD SECOND FOREIGN KEY TO allocation (pid) = playground(pid)
 
 > ALTER TABLE allocation ADD CONSTRAINT FK_pid FOREIGN KEY (pid) REFERENCES playground(pid);
+
+>ALTER TABLE `playground` ADD COLUMN `street` VARCHAR(255);
