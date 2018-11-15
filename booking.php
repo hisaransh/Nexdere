@@ -14,6 +14,10 @@
                 echo $city = $_SESSION['city'];
                 echo $date = $_SESSION['date'];
             }
+            if(isset($_SESSION["gametype"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
+            {
+                
+            }
 
         ?>
 <?php else :
