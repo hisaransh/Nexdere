@@ -9,6 +9,7 @@
         <head>
             <title>Choose game</title>
             <script>
+
                 // Javascript function to show the offline div when offline radio is selected
                 function showdiv(){
                     document.getElementById('offlineinfo').style.display ='block';
@@ -20,6 +21,7 @@
                     document.getElementById('offlineinfo').style.display ='none';
                     document.getElementById('onlineinfo').style.display ='block';
                 }
+                
             </script>
         </head>
     <body>
@@ -50,7 +52,9 @@
                 </select>
             </h3>
             <h3>
-            Select Date : <input type="date" name="dataselected" />
+            Select Date : <input type="date" name="dataselected" id="datefield" min=<?php
+                        echo date('Y-m-d');
+                            ?> />
             </h3>
         </div>
 
@@ -59,14 +63,14 @@
        <div id="onlineinfo" style="display:none;">
 
             <h3>GameType :
-                <select name="gametype">
+                <select name="gametypeonline">
                     <option>CS_GO</option>
                     <option>PUB-G</option>
                     <option>MARIO</option>
                 </select>
             </h3>
             <h3>
-            Select Date : <input type="date" name="dataselected" />
+            Select Date : <input type="date" name="dataselectedonline"/>
             </h3>
         </div>
         <input type="submit" name="gamewaysubmit" value="gamewaySubmit">
@@ -98,14 +102,10 @@
             }
             else if ($gameselected == "online") {
                 // Saving all the value to session variable for future references
-                $_SESSION["gametype"] = $_POST["gametype"];
-                $_SESSION["date"] = $_POST["dataselected"];
+                //$_SESSION["gametype"] = $_POST["gametype"];
+                //$_SESSION["date"] = $_POST["dataselected"];
 
                 //navigating to offlineInfo.php
-                header("location: onlineInfo.php");
-            }
-            else{
-                // Use this online way
                 //header("location: onlineInfo.php");
             }
 

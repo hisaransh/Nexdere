@@ -89,7 +89,7 @@
 				*/
 
 				// Destroying the session ad navigation back to signin.php
-				unsset($_POST['submitsignin']);
+				//unsset($_POST['submitsignin']);
 				session_destroy();
 				header("location: signin.php");
 			} 

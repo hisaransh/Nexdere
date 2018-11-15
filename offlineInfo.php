@@ -11,8 +11,8 @@
             // Only if on gameway.php if this variables were set
             if(isset($_SESSION["gametype"]) && isset($_SESSION["city"]) ){
                 //  Saving value to local variables
-                $game =  $_SESSION["gametype"]; 
-                $city =  $_SESSION["city"] ;
+                echo $game =  $_SESSION["gametype"]; 
+                echo $city =  $_SESSION["city"] ;
                 
                 //  Creating a connection
                 $servername = "localhost";
