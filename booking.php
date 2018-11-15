@@ -10,6 +10,10 @@
             {
                 
             }
+            if(isset($_SESSION["gametype"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
+            {
+                
+            }
 
         ?>
 <?php else :
