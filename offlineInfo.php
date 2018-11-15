@@ -10,7 +10,7 @@
         <?php
             // Only if on gameway.php if this variables were set
             if(isset($_SESSION["gametype"]) && isset($_SESSION["city"]) ){
-                //  Saving vslue to local variables
+                //  Saving value to local variables
                 $game =  $_SESSION["gametype"]; 
                 $city =  $_SESSION["city"] ;
                 

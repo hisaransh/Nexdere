@@ -8,7 +8,11 @@
         <?php
             if(isset($_SESSION["gametype"]) && isset($_SESSION["city"]) && isset($_POST['offlineInfoSubmit']))
             {
-                
+                echo $playerid = $_POST['play'];
+                echo $userid = $_SESSION['userid'];
+                echo $gametype = $_SESSION['gametype'];
+                echo $city = $_SESSION['city'];
+                echo $date = $_SESSION['date'];
             }
 
         ?>
