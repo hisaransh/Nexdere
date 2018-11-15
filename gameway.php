@@ -96,7 +96,7 @@
                 //navigating to offlineInfo.php
                 header("location: offlineInfo.php");
             }
-            else if (($gameselected == "online") {
+            else if ($gameselected == "online") {
                 // Saving all the value to session variable for future references
                 $_SESSION["gametype"] = $_POST["gametype"];
                 $_SESSION["date"] = $_POST["dataselected"];
