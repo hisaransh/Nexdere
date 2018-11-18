@@ -8,11 +8,12 @@
         <?php
             if(isset($_SESSION["gametype"]) && isset($_SESSION["city"]) && isset($_POST['offlineInfoSubmit']))
             {
-                echo $playerid = $_POST['play'];
-                echo $userid = $_SESSION['userid'];
-                echo $gametype = $_SESSION['gametype'];
-                echo $city = $_SESSION['city'];
-                echo $date = $_SESSION['date'];
+                $playerid = $_POST['play'];
+                $time = $_POST['timeselected'];
+                $userid = $_SESSION['userid'];
+                $gametype = $_SESSION['gametype'];
+                $city = $_SESSION['city'];
+                $date = $_SESSION['date'];
 
                 $servername = "localhost";
     		    $username = "phpmyadmin";
@@ -34,19 +35,42 @@
                 else
                 {
                     $query = "
-                        INSERT INTO allocation (uid , pid , gametype , city , date) VALUES (
-                            '$userid' , '$playerid' , '$gametype' , '$city' , '$date'
+                        INSERT INTO allocation (uid , pid , gametype , city , date,time) VALUES (
+                            '$userid' , '$playerid' , '$gametype' , '$city' , '$date' , '$time'
                         );
                     ";
                     $result = $conn->query($query);
 
                     if($result)
                     {
-                        echo "done";
+                        echo "Congrats! You have succesfully booked stadium"."<br/>";
+                        $query1 = "
+                            SELECT name from user ,time allocation where date = '$date' and pid='$playerid' and uid<>'$userid';
+                        ";
+                        $result1 = $conn->query($query1);
+                        if($result1)
+                        {
+                            if ($result1->num_rows > 0) {
+                                //  While rows are getting retrived from result of query
+                                while($row1 = $result1->fetch_assoc()) {
+                                    echo $row1['name'].$row['time']."</br>";
+                                }
+                            }
+                            else{
+                                echo "You are first One to book";
+                            }
+                        }
+
+
+
                     }
                     // Re-enter data on signup page
                     else{
-                        echo "not done";
+                        unset($_SESSION["gametype"]);
+                        unset($_SESSION["city"]);
+                        unset($_SESSION["userid"]);
+                        session_destroy();
+                        header("location: signin.php");
                     }
                 }
             }

@@ -43,7 +43,7 @@
                     $result = $conn->query($query);
                     echo "<div>";
                     // Creating table and showing the result in table
-                    echo "<table>";
+                    echo "<table border='1'>";
                     echo "<tr>";
                     echo "<td>"."Name"."</td>";
                     echo "<td>"."Choose"."</td>";
@@ -63,7 +63,11 @@
                     }
                     echo "</table>";
                     echo "</div>";
-                    echo "<input type='submit' name='offlineInfoSubmit' >";
+                    echo "</br>";
+                    echo "Select Time to Play ";
+                    echo "<input type='time' name='timeselected' min='4:00' max='18:00'>";
+                    echo "<p></p>";
+                    echo "<input type='submit' name='offlineInfoSubmit' value='Book' >";
                     echo "</form>";
             }
         }

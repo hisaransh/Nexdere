@@ -79,8 +79,8 @@
     </html>
 <?php else :
     // If session variable is not set then navigate back to signin.php
-    session_destroy();
     unset($_SESSION["userid"]);
+    session_destroy();
     header("location: signin.php");
 ?>
 <?php endif; ?>
