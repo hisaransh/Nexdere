@@ -63,10 +63,10 @@
        <div id="onlineinfo" style="display:none;">
 
             <h3>GameType :
-                <select name="gametypeonline">
-                    <option>CS_GO</option>
-                    <option>PUB-G</option>
-                    <option>MARIO</option>
+                <select name="gamename">
+                    <option>CSGO</option>
+                    <option>PUBG</option>
+                    <option>FIFA</option>
                 </select>
             </h3>
             <h3>
@@ -102,11 +102,11 @@
             }
             else if ($gameselected == "online") {
                 // Saving all the value to session variable for future references
-                //$_SESSION["gametype"] = $_POST["gametype"];
-                //$_SESSION["date"] = $_POST["dataselected"];
+                $_SESSION["gamename"] = $_POST["gamename"];
+                $_SESSION["date"] = $_POST["dataselectedonline"];
 
-                //navigating to offlineInfo.php
-                //header("location: onlineInfo.php");
+                //navigating to onlineInfo.php
+                header("location: onlineInfo.php");
             }
 
             

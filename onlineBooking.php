@@ -6,13 +6,12 @@
 
     <body>
         <?php
-            if(isset($_SESSION["gametype"]) && isset($_SESSION["city"]) && isset($_POST['offlineInfoSubmit']))
+            if(isset($_SESSION["gamename"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
             {
                 $playerid = $_POST['play'];
                 $time = $_POST['timeselected'];
                 $userid = $_SESSION['userid'];
-                $gametype = $_SESSION['gametype'];
-                $city = $_SESSION['city'];
+                $gamename = $_SESSION['gamename'];
                 $date = $_SESSION['date'];
 
                 $servername = "localhost";
@@ -27,7 +26,7 @@
     		    {
                     die("connection error");
                     session_destroy();
-                    unset($_SESSION["gametype"]);
+                    unset($_SESSION["gamename"]);
                     unset($_SESSION["city"]);
                     unset($_SESSION["userid"]);
                     header("location: signin.php");
@@ -35,8 +34,8 @@
                 else
                 {
                     $query = "
-                        INSERT INTO allocation (uid , pid , gametype , city , date,time) VALUES (
-                            '$userid' , '$playerid' , '$gametype' , '$city' , '$date' , '$time'
+                        INSERT INTO allocation (uid , pid , gamename , city , date,time) VALUES (
+                            '$userid' , '$playerid' , '$gamename' , '$city' , '$date' , '$time'
                         );
                     ";
                     $result = $conn->query($query);
@@ -66,7 +65,7 @@
                     }
                     // Re-enter data on signup page
                     else{
-                        unset($_SESSION["gametype"]);
+                        unset($_SESSION["gamename"]);
                         unset($_SESSION["city"]);
                         unset($_SESSION["userid"]);
                         session_destroy();
@@ -74,7 +73,7 @@
                     }
                 }
             }
-            else if(isset($_SESSION["gametype"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
+            else if(isset($_SESSION["gamename"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
             {
                 
             }
