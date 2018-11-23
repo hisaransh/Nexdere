@@ -35,6 +35,7 @@
 			</p>
 		</fieldset>
 	</form>
+	<button type="button" onclick="location.href='signup.php">signup</button>
 </body>
 </html>
 <?php
