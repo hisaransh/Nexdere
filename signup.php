@@ -48,6 +48,6 @@
 			</p>
 		</fieldset>
 	</form>
-	<button type="button" onclick="location.href='signin.php'">signin</button>
+	<button type="button" onclick="location.href='signin.php">signip</button>
 </body>
 </html>
