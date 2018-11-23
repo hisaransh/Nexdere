@@ -45,13 +45,18 @@
                     {
                         echo "Congrats! You have succesfully booked stadium"."<br/>";
                         $query1 = "
-                            SELECT name from user ,allocation where date = '$date' and pid='$playerid' and uid<>'$userid';
+                            SELECT user.name from allocation , user  where
+                            date='$date' and 
+                            pid='$playerid' and 
+                            allocation.uid<>'$userid' and 
+                            user.uid=allocation.uid;
                         ";
                         $result1 = $conn->query($query1);
                         if($result1)
                         {
                             if ($result1->num_rows > 0) {
                                 //  While rows are getting retrived from result of query
+                                echo "<h3>Following person have also booked</h3>";
                                 while($row1 = $result1->fetch_assoc()) {
                                     echo $row1['name'].$row['time']."</br>";
                                 }
