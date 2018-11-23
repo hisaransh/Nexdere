@@ -14,27 +14,47 @@
 	<title>NexDere</title>
 	<meta name = "viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 	<title></title>
+	<link rel="stylesheet" href="css/bootstrap.min.cs --><!-- s">
 	<link rel="stylesheet" href="css/style.css">
-	</head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 <body>
-	<form method="POST" action = "<?php htmlspecialchars($_SERVER['PHP_SELF'])?>"  class=" _80 mar0 ">
-		<fieldset class="_80 mar0 fieldset">
-			<legend align="center">
-				Sign In:
-			</legend>
-			<p align="center">
-				<label for="phone">Phone :</label><br>
-				<input type="text" name="phone" class=" _40 input" required>
-			</p>
-			<p align="center">
-				<label for="password">Password :</label><br>
-				<input type="password" name="password" class=" _40 input" required>
-			</p>
-			<p align="center">
-				<input type="submit" name="submitsignin" value="SignIn" class=" _40 input" required>
-			</p>
-		</fieldset>
-	</form>
+	<div class="card _80 mar0">
+	<h5 class="card-header center">Welcome to the Nexdere World</h5>
+	<div class="card-body">
+	  	<div class="right">
+	  		<span><b><i>Not registered..?</i></b></span><br>
+	  		<a href="signup.php " class="btn btn-primary right">Sign up -></a>
+	  	</div>
+	    
+	    	<form method="POST" action = "<?php htmlspecialchars($_SERVER['PHP_SELF'])?>"  class="mar0 ">
+				<fieldset class="_40 center2  ">
+					<legend align ="center" class=" ">
+						<i><b>Sign-In to Nexdere:</b></i>
+					</legend>
+					<div class="input-group mb-3 center ">
+					 	<div class="input-group-prepend">
+					    	<span class="input-group-text" id="inputGroup-sizing-default"> Phone No:
+					    	</span>
+					  	</div>
+					  	<input type="Phone" name="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+					</div>
+					<div class="input-group mb-3 center ">
+					 	<div class="input-group-prepend">
+					    	<span class="input-group-text" id="inputGroup-sizing-default"> Password:
+					    	</span>
+					  	</div>
+					  	<input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+					</div>
+
+					<div class="" >
+						<button type="submit" class="btn btn-primary" name="submit" value = "Signin" required>Sign in</button>
+					</div>
+				</fieldset>	
+			</form>
+	    </div>
+	</div>
 </body>
 </html>
 <?php
