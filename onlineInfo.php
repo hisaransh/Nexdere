@@ -35,10 +35,10 @@
                 else{
                     // Query in sql to select events from Event table and showing to user
             
-                    $query = "SELECT * from onlinemode where gameName = '$game';";
+                    $query = "SELECT * from onlinemode where gameName = '$game' and date = '$date';";
 
                     // Creating a form
-                    echo "<form name='onlineinfo' method='post' action='booking.php' ";
+                    echo "<form name='onlineinfo' method='post' action='onlineBooking.php' ";
                     $result = $conn->query($query);
                     echo "<div>";
                     // Creating table and showing the result in table
@@ -55,8 +55,9 @@
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>".$row['gameName']."</td>";
-                            echo "<td>"."<input type='radio' name='play' value='$row[gid]' >"."</td>";
+                            echo "<td>"."<input type='radio' name='gameid' value='$row[gid]' >"."</td>";
                             echo "<td>".$row['competitionName']."</td>";
+                            echo "<td>".$row['time']."</td>";
                             echo "</tr>";
                             
                         }

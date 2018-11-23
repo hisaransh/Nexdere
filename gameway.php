@@ -70,7 +70,10 @@
                 </select>
             </h3>
             <h3>
-            Select Date : <input type="date" name="dataselectedonline"/>
+            Select Date : <input type="date" name="dataselectedonline"
+            min=<?php
+                        echo date('Y-m-d');
+                            ?> />
             </h3>
         </div>
         <input type="submit" name="gamewaysubmit" value="gamewaySubmit">

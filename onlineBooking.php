@@ -8,7 +8,7 @@
         <?php
             if(isset($_SESSION["gamename"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
             {
-                $playerid = $_POST['play'];
+                $gameid = $_POST['gameid'];
                 $time = $_POST['timeselected'];
                 $userid = $_SESSION['userid'];
                 $gamename = $_SESSION['gamename'];
@@ -34,25 +34,26 @@
                 else
                 {
                     $query = "
-                        INSERT INTO allocation (uid , pid , gamename , city , date,time) VALUES (
-                            '$userid' , '$playerid' , '$gamename' , '$city' , '$date' , '$time'
+                        INSERT INTO allocationOnline (uid , gid , gamename , city , date) VALUES (
+                            '$userid' , '$gameid' , '$gamename' , '$city' , '$date' 
                         );
                     ";
                     $result = $conn->query($query);
 
                     if($result)
                     {
-                        echo "Congrats! You have succesfully booked stadium"."<br/>";
+                        echo "Congrats! You have succesfully booked competition"."<br/>";
                         $query1 = "
-                            SELECT name from user ,allocation where date = '$date' and pid='$playerid' and uid<>'$userid';
+                            SELECT name from user ,allocationOnline where date = '$date' and gid='$gameid' and uid<>'$userid';
                         ";
                         $result1 = $conn->query($query1);
                         if($result1)
                         {
                             if ($result1->num_rows > 0) {
                                 //  While rows are getting retrived from result of query
+                                echo "You are playing with:  \n"
                                 while($row1 = $result1->fetch_assoc()) {
-                                    echo $row1['name'].$row['time']."</br>";
+                                    echo $row1['name']"</br>";
                                 }
                             }
                             else{
@@ -73,16 +74,12 @@
                     }
                 }
             }
-            else if(isset($_SESSION["gamename"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
-            {
-                
-            }
 
         ?>
 <?php else :
     session_destroy();
     unset($_SESSION["userid"]);
-    unset($_POST['offlineInfoSubmit']);
+    unset($_POST['onlineInfoSubmit']);
     header("location: signin.php");
 ?>
 <?php endif; ?>
