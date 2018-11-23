@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>NexDeer</title>
+	<title>NexDere</title>
 	<meta name = "viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 	<title></title>
 	<link rel="stylesheet" href="css/bootstrap.min.cs --><!-- s">
@@ -84,10 +84,10 @@
 	 </script>
 </head>
 
-<body class="body bg-image">
+<body class="body">
 
 	<div class="card">
-	  <h5 class="card-header center">Welcome to the Nexder World</h5>
+	  <h5 class="card-header center">Welcome to the Nexdere World</h5>
 	  <div class="card-body">
 	  	<div class="right">
 	  		<span><b><i>Already registered..?</i></b></span><br>
@@ -135,16 +135,7 @@
 					  	</div>
 					  	<input type="Phone" name="phone" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 					</div>
-					<div class="form-check form-check-inline ">
-		  				<input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
-		 			 	<label class="form-check-label" for="inlineRadio1">Male</label>
-					</div>
-					<div class="form-check form-check-inline">
-		  				<input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
-		  				<label class="form-check-label" for="inlineRadio2">Female</label>
-					</div>
-					<br>
-					<br>
+
 					<div class="input-group mb-3 center ">
 					 	<div class="input-group-prepend">
 					    	<span class="input-group-text" id="inputGroup-sizing-default"> DOB: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -154,6 +145,21 @@
                         echo date('Y-m-d');
                             ?> required> 
 					</div>
+
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="inputGroup-sizing-default"> Gender:
+					    </span>
+
+					</div>    
+					<div class="form-check form-check-inline" style="left : 10px;">
+		  				<input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
+		 			 	<label class="form-check-label" for="inlineRadio1">Male</label>
+					</div>
+					<div class="form-check form-check-inline" style="left:10px;">
+		  				<input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+		  				<label class="form-check-label" for="inlineRadio2">Female</label>
+					</div>
+					<br>	
 					<br>
 					<div class="alert alert-warning alert-dismissible fade show none" role="alert" id="forerror">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
