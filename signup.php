@@ -36,7 +36,9 @@
 			</p>
 			<p align="center" class="white">
 				<label for="dob">DateOfBirth:</label><br>
-				<input type="date" name="dob" class="_40 input" required>
+				<input type="date" name="dob" class="_40 input" max=<?php
+                        echo date('Y-m-d');
+                            ?> required>
 			</p>
 
 			<p align="center" class="white">
