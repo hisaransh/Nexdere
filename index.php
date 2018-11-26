@@ -59,13 +59,13 @@
         </div>
       </div>
 
-      <div class="card left " style="width: 18rem; left: 90px;">
+      <div class="card left " style="width: 18rem; left: 35px;">
         <img class="card-img-top" src="img/title.png" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-      <div class="card " style="width: 18rem; left: 165px;">
+      <div class="card " style="width: 18rem; left: 60px;">
         <img class="card-img-top" src="img/title.png" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

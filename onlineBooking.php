@@ -43,16 +43,16 @@
                     {
                         echo "Congrats! You have succesfully booked competition"."<br/>";
                         $query1 = "
-                            SELECT name FROM user WHERE uid IN (SELECT UID FROM allocationOnline WHERE gid = '$gameid');
+                            SELECT name FROM user WHERE uid IN (SELECT UID FROM allocationOnline WHERE gid = '$gameid' and uid<>'$userid');
                         ";
                         $result1 = $conn->query($query1);
                         if($result1)
                         {
                             if ($result1->num_rows > 0) {
                                 //  While rows are getting retrived from result of query
-                                echo "You are playing with:  \n"
+                                echo "You are playing with:  </br>";
                                 while($row1 = $result1->fetch_assoc()) {
-                                    echo $row1['name']"</br>";
+                                    echo $row1['name']."</br>";
                                 }
                             }
                             else{

@@ -15,8 +15,8 @@
                 
                  //  Creating a connection
                 $servername = 'localhost';
-                $username = 'root';
-                $password = 'your_password';
+                $username = 'phpmyadmin';
+                $password = 'elonmusk';
                 $dbname = "nexdre";
 
                 $conn = new mysqli($servername,$username,$password,$dbname);
@@ -57,7 +57,7 @@
                             echo "<tr>";
                             echo "<td>".$row['gameName']."</td>";
 
-                            echo "<td>"."<input type='radio' name='play' value='$row[gid]' >"."</td>";
+                            echo "<td>"."<input type='radio' name='gameid' value='$row[gid]' >"."</td>";
                             echo "<td>".$row['competitionName']."</td>";
                             echo "<td>".$row['date']."</td>";
                             echo "<td>".$row['time']."</td>";

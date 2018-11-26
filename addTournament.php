@@ -25,10 +25,11 @@
 					</legend>
 					<div class="input-group mb-3 center ">
 					 	<div class="input-group-prepend">
-					    	<span class="input-group-text" id="inputGroup-sizing-default"> Game Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    	<span class="input-group-text" id="inputGroup-sizing-default"> Game Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					    	</span>
 					  	</div>
-					  	<select name="addgamename" required>
+					  	<br>
+			<select name="addgamename" required>
 			<option value='CSGO' >CSGO</option>
 			<option value='CALL OF DUTY'>CALL OF DUTY</option>
 			<option value='FIFA'>FIFA</option>
@@ -41,7 +42,7 @@
 
 		<div class="input-group mb-3 center ">
 					 	<div class="input-group-prepend">
-					    	<span class="input-group-text" id="inputGroup-sizing-default"> Competition Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    	<span class="input-group-text" id="inputGroup-sizing-default"> Competition Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					    	</span>
 					  	</div>
 					  	<input type="text" name="competitionName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
