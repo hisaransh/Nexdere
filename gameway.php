@@ -60,21 +60,13 @@
 
        <!--  options for online game -->
 
-       <div id="onlineinfo" style="display:none;">
+       	<div id="onlineinfo" style="display:none;">
+			
+			<div>
+				<input type="radio" name="pubg">
+				<img src="img/test1.png">
+			</div>
 
-            <h3>GameType :
-                <select name="gamename">
-                    <option>CSGO</option>
-                    <option>PUBG</option>
-                    <option>FIFA</option>
-                </select>
-            </h3>
-            <h3>
-            Select Date : <input type="date" name="dataselectedonline"
-            min=<?php
-                        echo date('Y-m-d');
-                            ?> />
-            </h3>
         </div>
         <input type="submit" name="gamewaysubmit" value="gamewaySubmit">
         </form>
@@ -115,3 +107,22 @@
             
     }
 ?>
+
+
+
+
+
+
+<!-- <h3>GameType :
+                <select name="gamename">
+                    <option>CSGO</option>
+                    <option>PUBG</option>
+                    <option>FIFA</option>
+                </select>
+            </h3>
+            <h3>
+            Select Date : <input type="date" name="dataselectedonline"
+            min=<?php
+                        echo date('Y-m-d');
+                            ?> />
+            </h3> -->
