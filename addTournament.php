@@ -60,7 +60,7 @@
 					    	<span class="input-group-text" id="inputGroup-sizing-default"> Competition Time: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					    	</span>
 					  	</div>
-					  	<input type="text" name="competitionTime" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+					  	<input type="time" name="competitionTime" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
 					</div>
 		<button type="submit" class="btn btn-primary" name="addcompetitionSubmit" value = "Add Competition" required>Add Competition</button>
 		</fieldset>	
@@ -73,13 +73,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </html>
 
-<?php
-	if($_SERVER['REQUEST_METHOD'] == "POST"){
-		$competitionName = $_POST['competitionName'];
-		$competitionDate = $_POST['competitionDate'];
-		$competitionTime = $_POST['competitionTime'];
-		$gamename = $_POST['addgamename'];
-	}
+	<?php
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $servername = "localhost";
+        $username = "phpmyadmin";
+        $password = "elonmusk";
+        $dbname = "nexdre";
+
+        $conn = new mysqli($servername,$username,$password,$dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+
+        $competitionName = $_POST['competitionName'];
+        $competitionDate = $_POST['competitionDate'];
+        $competitionTime = $_POST['competitionTime'];
+        $gamename = $_POST['addgamename'];
+        $sql = "insert into onlineMode( gameName, competitionName, time, date)
+            values('$gamename','$competitionName','$competitionTime','$competitionDate');
+        ";
+        if (mysqli_query($conn, $sql)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        
+        mysqli_close($conn);
+    
+    }
 
 ?>
 
