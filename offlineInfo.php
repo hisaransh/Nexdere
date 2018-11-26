@@ -5,19 +5,44 @@
 <!-- if session variable is set  -->
 <?php if(isset($_SESSION["userid"])) :?>
     <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+        <style type="text/css">
+            th, td {
+            padding: 15px;
+            text-align: left;
+            }
+        </style>
+    </head>
     <body>
+
+        <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" href="#"  >
+            <b><i>Nexdere</i></b>
+          </a>
+        </nav>
+        <br>
+        <br>
+        <br>
         <?php
             // Only if on gameway.php if this variables were set
             if(isset($_SESSION["gametype"]) && isset($_SESSION["city"]) ){
                 //  Saving value to local variables
-                echo $game =  $_SESSION["gametype"]; 
-                echo $city =  $_SESSION["city"] ;
+                $game =  $_SESSION["gametype"]; 
+                $city =  $_SESSION["city"] ;
                 
                 //  Creating a connection
                 $servername = "localhost";
-    		    $username = "phpmyadmin";
-    		    $password = "elonmusk";
+    		    $username = "root";
+    		    $password = "your_password";
                 $dbname = "nexdre";
 
     		    $conn = new mysqli($servername,$username,$password,$dbname);
@@ -43,7 +68,7 @@
                     $result = $conn->query($query);
                     echo "<div>";
                     // Creating table and showing the result in table
-                    echo "<table border='1'>";
+                    echo "<table align='center'>";
                     echo "<tr>";
                     echo "<td>"."Name"."</td>";
                     echo "<td>"."Choose"."</td>";
@@ -64,10 +89,14 @@
                     echo "</table>";
                     echo "</div>";
                     echo "</br>";
+                    echo "<div class='center'>";
                     echo "Select Time to Play ";
                     echo "<input type='time' name='timeselected' min='4:00' max='18:00'>";
+                    echo "</div>";
                     echo "<p></p>";
-                    echo "<input type='submit' name='offlineInfoSubmit' value='Book' >";
+                    echo "<div class='center'>";
+                    echo "<input type='submit' class='btn btn-primary' name='offlineInfoSubmit' value='Book' >";
+                    echo "</div>";
                     echo "</form>";
             }
         }

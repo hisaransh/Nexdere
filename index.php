@@ -55,20 +55,20 @@
       <div class="card left  " style="width: 18rem;">
         <img class="card-img-top" src="img/title.png" alt="Card image cap">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Experience a new way of gaming and let the adrenaline rush into your veins.</p>
         </div>
       </div>
 
       <div class="card left " style="width: 18rem; left: 35px;">
         <img class="card-img-top" src="img/title.png" alt="Card image cap">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Play with comfort at your place as per your convenience.</p>
         </div>
       </div>
       <div class="card " style="width: 18rem; left: 60px;">
         <img class="card-img-top" src="img/title.png" alt="Card image cap">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">Just ground and a sport are all that you need to remain fit and enjoy.</p>
         </div>
       </div>
       

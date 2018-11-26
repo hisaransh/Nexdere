@@ -295,4 +295,10 @@ ul.submenu li{
 	min-height: 50px;
 	bottom: 0px;	
 	top: 20px;
+
 }
+
+.fixed{
+
+	position: fixed;
+ }

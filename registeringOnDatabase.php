@@ -5,8 +5,8 @@
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
         // Creating a connection
 		$servername = "localhost";
-		$username = "phpmyadmin";
-		$password = "elonmusk";
+		$username = "root";
+		$password = "your_password";
         $dbname = "nexdre";
 
 		$conn = new mysqli($servername,$username,$password,$dbname);

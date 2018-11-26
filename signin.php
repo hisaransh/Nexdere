@@ -64,8 +64,8 @@
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 		
 		$servername = "localhost";
-		$username = "phpmyadmin";
-		$password = "elonmusk";
+		$username = "root";
+		$password = "your_password";
 		$database = "nexdre";
 		
 		// Creating connection
@@ -100,7 +100,7 @@
 				
 				// Heading to gameway.php
 
-				header("location: gameway.php");
+				header("location: allAllocation.php");
 			}
 			// If no person found
 			else{
