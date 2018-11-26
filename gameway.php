@@ -60,14 +60,26 @@
 
        <!--  options for online game -->
 
-       	<div id="onlineinfo" style="display:none;">
-			
-			<div>
-				<input type="radio" name="pubg">
-				<img src="img/test1.png">
-			</div>
+       	<!--  options for online game -->
 
-        </div>
+        <div id="onlineinfo" style="display:none;" align="center">
+            
+            <div>
+                <input type="radio" name="gamename" value="PUBG">
+                <img src="img/test1.png">
+            </div>
+            <div>
+                <input type="radio" name="gamename" value="CSGO">
+                <img src="img/test1.png">
+            </div>
+            <div>
+                <input type="radio" name="gamename" value="FIFA">
+                <img src="img/test1.png">
+            </div>
+            <div>
+                <input type="radio" name="gamename" value="CALL OF DUTY">
+                <img src="img/test1.png">
+            </div>
         <input type="submit" name="gamewaysubmit" value="gamewaySubmit">
         </form>
     </body>    
@@ -98,7 +110,6 @@
             else if ($gameselected == "online") {
                 // Saving all the value to session variable for future references
                 $_SESSION["gamename"] = $_POST["gamename"];
-                $_SESSION["date"] = $_POST["dataselectedonline"];
 
                 //navigating to onlineInfo.php
                 header("location: onlineInfo.php");

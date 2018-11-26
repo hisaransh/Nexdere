@@ -6,13 +6,12 @@
 
     <body>
         <?php
-            if(isset($_SESSION["gamename"]) && isset($_SESSION["date"]) && isset($_POST['onlineInfoSubmit']))
+            if(isset($_SESSION["gamename"])&& isset($_POST['onlineInfoSubmit']))
             {
                 $gameid = $_POST['gameid'];
-                $time = $_POST['timeselected'];
                 $userid = $_SESSION['userid'];
                 $gamename = $_SESSION['gamename'];
-                $date = $_SESSION['date'];
+                
 
                 $servername = "localhost";
     		    $username = "phpmyadmin";
@@ -34,8 +33,8 @@
                 else
                 {
                     $query = "
-                        INSERT INTO allocationOnline (uid , gid , gamename , city , date) VALUES (
-                            '$userid' , '$gameid' , '$gamename' , '$city' , '$date' 
+                        INSERT INTO allocationOnline (uid , gid ) VALUES (
+                            '$userid' , '$gameid' 
                         );
                     ";
                     $result = $conn->query($query);
@@ -44,7 +43,7 @@
                     {
                         echo "Congrats! You have succesfully booked competition"."<br/>";
                         $query1 = "
-                            SELECT name from user ,allocationOnline where date = '$date' and gid='$gameid' and uid<>'$userid';
+                            SELECT name FROM user WHERE uid IN (SELECT UID FROM allocationOnline WHERE gid = '$gameid');
                         ";
                         $result1 = $conn->query($query1);
                         if($result1)

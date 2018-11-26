@@ -9,15 +9,14 @@
     <body>
         <?php
             // Only if on gameway.php if this variables were set
-            if(isset($_SESSION["gamename"]) && isset($_SESSION["date"]) ){
+            if(isset($_SESSION["gamename"])){
                 //  Saving vslue to local variables
                 $game =  $_SESSION["gamename"]; 
-                $date =  $_SESSION["date"];
                 
-                //  Creating a connection
+                 //  Creating a connection
                 $servername = 'localhost';
-                $username = 'phpmyadmin';
-                $password = 'elonmusk';
+                $username = 'root';
+                $password = 'your_password';
                 $dbname = "nexdre";
 
                 $conn = new mysqli($servername,$username,$password,$dbname);
@@ -42,11 +41,13 @@
                     $result = $conn->query($query);
                     echo "<div>";
                     // Creating table and showing the result in table
-                    echo "<table>";
+                    echo "<table border='2'>";
                     echo "<tr>";
                     echo "<td>"."Name"."</td>";
                     echo "<td>"."Choose"."</td>";
-                    echo "<td>"."date"."</td>";
+                    echo "<td>"."Competition Name"."</td>";
+                    echo "<td>"."Date"."</td>";
+                    echo "<td>"."Time"."</td>";
                     echo "</tr>";
 
                     // If number of rows retrived are grater then zero
@@ -55,8 +56,10 @@
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>".$row['gameName']."</td>";
-                            echo "<td>"."<input type='radio' name='gameid' value='$row[gid]' >"."</td>";
+
+                            echo "<td>"."<input type='radio' name='play' value='$row[gid]' >"."</td>";
                             echo "<td>".$row['competitionName']."</td>";
+                            echo "<td>".$row['date']."</td>";
                             echo "<td>".$row['time']."</td>";
                             echo "</tr>";
                             
@@ -64,7 +67,7 @@
                     }
                     echo "</table>";
                     echo "</div>";
-                    echo "<input type='submit' name='onlineInfoSubmit' >";
+                    echo "<input type='submit' name='onlineInfoSubmit' value='Book' >";
                     echo "</form>";
             }
         }
