@@ -286,10 +286,13 @@ ul.submenu li{
 
 .center2 {
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
 }
 
-.r0{
-	float: right;	
+.footer{
+	background-color: #f8f9fa;
+	min-height: 50px;
+	bottom: 0px;	
+	top: 20px;
 }
