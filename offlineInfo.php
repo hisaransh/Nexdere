@@ -41,8 +41,9 @@
                 
                 //  Creating a connection
                 $servername = "localhost";
-    		    $username = "root";
-    		    $password = "your_password";
+    		    
+        $username = "phpmyadmin";
+        $password = "elonmusk";
                 $dbname = "nexdre";
 
     		    $conn = new mysqli($servername,$username,$password,$dbname);

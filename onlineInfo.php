@@ -38,8 +38,9 @@
                 
                  //  Creating a connection
                 $servername = 'localhost';
-                $username = 'root';
-                $password = 'your_password';
+                
+		        $username = "phpmyadmin";
+		        $password = "elonmusk";
                 $dbname = "nexdre";
 
                 $conn = new mysqli($servername,$username,$password,$dbname);
@@ -56,8 +57,10 @@
                 }
                 else{
                     // Query in sql to select events from Event table and showing to user
-            
-                    $query = "SELECT * from onlineMode where gameName = '$game';";
+                    $todayDate = date('Y-m-d');
+                    $query = "SELECT * from onlineMode where gameName = '$game'
+                    AND date >= '$todayDate' ORDER BY date;
+                    ";
 
                     // Creating a form
                     echo "<form name='onlineinfo' method='post' action='onlineBooking.php' ";
@@ -79,7 +82,6 @@
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>".$row['gameName']."</td>";
-
                             echo "<td>"."<input type='radio' name='gameid' value='$row[gid]' >"."</td>";
                             echo "<td>".$row['competitionName']."</td>";
                             echo "<td>".$row['date']."</td>";

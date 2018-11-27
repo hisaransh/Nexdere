@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title> Nexdere : Details </title>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -37,7 +38,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" style="margin-left:20px;" href="gameway.php">Book</a>
-                <a class="dropdown-item" style="margin-left:20px;" href="index.php">LogOut</a>
+                <a class="dropdown-item" style="margin-left:20px;" href="logout.php">LogOut</a>
             </div>
         </div>
         
@@ -49,8 +50,9 @@
 
     <?php
         $servername = "localhost";
-        $username = "root";
-        $password = "your_password";
+        
+        $username = "phpmyadmin";
+        $password = "elonmusk";
         $dbname = "nexdre";
         $userid = $_SESSION['userid'];
         $conn = new mysqli($servername,$username,$password,$dbname);
@@ -85,7 +87,7 @@
 
             //Printing Offline allocations
             $offlinequery = "
-            Select name , allocation.city , playground.gametype , street,time,date from playground,allocation where allocation.pid = playground.pid and allocation.uid = '$userid';
+            Select name , allocation.city , playground.gametype , street,time,date from playground,allocation where allocation.pid = playground.pid and allocation.uid = '$userid' ORDER BY date;
             ";
             $resultoffline = $conn->query($offlinequery);
             echo "
@@ -127,7 +129,8 @@
             $onlinequery = "
                 SELECT gameName , competitionName, date,time 
                 FROM onlineMode,allocationOnline 
-                WHERE allocationOnline.gid = onlineMode.gid AND allocationOnline.uid = '$userid';
+                WHERE allocationOnline.gid = onlineMode.gid AND allocationOnline.uid = '$userid'
+                ORDER BY date;
             ";
             $resultonline = $conn->query($onlinequery);
 

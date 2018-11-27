@@ -64,8 +64,8 @@
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 		
 		$servername = "localhost";
-		$username = "root";
-		$password = "your_password";
+		$username = "phpmyadmin";
+		$password = "elonmusk";
 		$database = "nexdre";
 		
 		// Creating connection

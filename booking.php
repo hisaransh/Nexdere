@@ -4,6 +4,7 @@
 <?php if(isset($_SESSION["userid"])) :?>
     <html>
     <head>
+    	<title> Nexdere : Booking </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,8 +41,9 @@
                 $date = $_SESSION['date'];
 
                 $servername = "localhost";
-    		    $username = "root";
-    		    $password = "your_password";
+    		   
+		$username = "phpmyadmin";
+		$password = "elonmusk";
                 $dbname = "nexdre";
 
     		    $conn = new mysqli($servername,$username,$password,$dbname);

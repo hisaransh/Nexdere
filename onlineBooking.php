@@ -25,7 +25,7 @@
           <a class="navbar-brand" href="#"  >
             <b><i>Nexdere</i></b>
           </a>
-          <button  class="btn btn-primary" onclick="window.location.href='signin.php'"required >Home</button>
+          <button  class="btn btn-primary" onclick="window.location.href='allAllocation.php'"required >Home</button>
         </nav>
         <br><br><br>
         <?php
@@ -37,8 +37,9 @@
                 
 
                 $servername = "localhost";
-    		    $username = "root";
-    		    $password = "your_password";
+    		    
+		$username = "phpmyadmin";
+		$password = "elonmusk";
                 $dbname = "nexdre";
 
     		    $conn = new mysqli($servername,$username,$password,$dbname);
@@ -67,7 +68,7 @@
                         echo "<div class='alert alert-dark center' role='alert'>
                         Congrats! You have succesfully booked competition"."<br/>"."</div>";
                         $query1 = "
-                            SELECT name FROM user WHERE uid IN (SELECT UID FROM allocationOnline WHERE gid = '$gameid' and uid<>'$userid');
+                        SELECT DISTINCT(name) from user , allocationOnline where user.uid = allocationOnline.uid and allocationOnline.gid = '$gameid' and user.uid<>'$userid';
                         ";
                         $result1 = $conn->query($query1);
                         if($result1)
